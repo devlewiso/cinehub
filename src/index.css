@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-negro font-sans text-texto antialiased; }
+  :focus-visible { outline: 2px solid #ff3b47; outline-offset: 3px; }
+  input[type='search']::-webkit-search-cancel-button { filter: invert(1); opacity: .5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

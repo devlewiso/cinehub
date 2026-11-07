@@ -1,0 +1,14 @@
+// CineHub: SPA estática + Worker que hace de proxy a OMDb (la key es secreto: OMDB_API_KEY).
+// Deploy: npm run build && npx wrangler deploy
+{
+  "name": "cinehub",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "routes": [{ "pattern": "cine.neuralcodelab.com", "custom_domain": true }]
+}
